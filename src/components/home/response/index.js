@@ -20,17 +20,19 @@ const ResponseView = ({ response }) => {
 				</Grid>
 
 				{response.data ? (
-					<Grid item xs={12} style={{ maxHeight: 300, overflow: "auto", pointerEvents: "none" }}>
-						<CodeEditor
-							value={JSON.stringify(response.data, null, 2)}
-							language={"json"}
-							padding={15}
-							style={{
-								fontSize: 12,
-								backgroundColor: "#f5f5f5",
-								fontFamily: "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
-							}}
-						/>
+					<Grid item xs={12} style={{ maxHeight: 300, overflow: "auto" }}>
+						<div style={{ pointerEvents: "none" }}>
+							<CodeEditor
+								value={JSON.stringify(response.data, null, 2)}
+								language={"json"}
+								padding={15}
+								style={{
+									fontSize: 12,
+									backgroundColor: "#f5f5f5",
+									fontFamily: "ui-monospace,SFMono-Regular,SF Mono,Consolas,Liberation Mono,Menlo,monospace",
+								}}
+							/>
+						</div>
 					</Grid>
 				) : null}
 			</Grid>
